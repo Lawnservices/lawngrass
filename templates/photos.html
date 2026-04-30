@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='photos.css') }}">
+{% endblock%}
+
+{% block content %}
+<h2>THE BEST PRICES IN THE AREA.</h2>
+<h2>Gallery</h2>
+<div id="gallery" class="gallery"></div>
+
+{% endblock %}
+
+
+{% block script%}
+<script src="{{ url_for('static', filename='app.js')}}"></script>
+{% endblock%}
