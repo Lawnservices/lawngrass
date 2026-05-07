@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/field.png" type="image/x-icon">
     {% block head %}{% endblock%}
-    <title>Document</title>
+    <title>{% block title%}Miguel Lawn Services {% endblock%}</title>
 </head>
 <body>
   <header>
