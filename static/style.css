@@ -79,3 +79,13 @@ color: #1e7a57;
 font-size: 22px;
 text-align: center;
 }
+
+.contenido{
+background-color: #e5ebf7;
+padding: 16px;
+box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4); 
+margin-top: 60px;
+}
+.contenido p{
+color: rgb(68, 30, 30);
+}
