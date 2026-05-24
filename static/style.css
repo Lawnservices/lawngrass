@@ -4,7 +4,7 @@ margin: 0;
 .content{
 max-width: 1200px;
 margin: 24px auto;
-max-height: 1000px;
+ 
 }
 header {
     margin: 0;
@@ -81,16 +81,24 @@ text-align: center;
 }
 
 .contenido{
-background-color: #e5ebf7;
+flex: 1;  
+background-color:white;
+max-width: 1400px;
 padding: 16px;
-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.4); 
+box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2); 
 margin-top: 60px;
+margin: 6px;
 }
 .contenido p{
 color: rgb(68, 30, 30);
 }
-footer{
-max-width: 1200px;
-margin-top:600px;
- 
+
+ footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 20px;
+    background: #0b3d2e;
+    color: white;
+     
+    
 }
