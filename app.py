@@ -16,6 +16,10 @@ def prices():
 def photos():
     return render_template('photos.html')
 
+# pagina de error
+@app.errorhandler(404)
+def pagina_no_encontrada(error):
+    return redirect("/")
 
 if __name__ == '__main__':
     app.run(debug=True)
