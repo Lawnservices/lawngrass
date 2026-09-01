@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+ 
+<title>Jardines TV</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='videos.css')}}">
+ 
+
+{% block content %} 
+
+    <header class="header">
+        <h1>Jardines TV</h1>
+        <p>Videos</p>
+    </header>
+
+    <main>
+
+        <!-- REPRODUCTOR -->
+        <section class="player-container">
+
+            <div class="player">
+
+                <iframe
+                    id="youtubePlayer"
+                    src=""
+                    title="Jardines TV"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+            <h2 id="videoTitle">
+                Select a Video
+            </h2>
+
+        </section>
+
+
+        <!-- VIDEOS -->
+        <section>
+
+            <h2 class="section-title">
+                Select a Video
+            </h2>
+
+            <div id="loading">
+                Loading Videos...
+            </div>
+
+            <div id="error"></div>
+
+            <div id="videos" class="videos"></div>
+
+        </section>
+
+    </main>
+
+{% endblock %}    
+    <!-- <script src="app.js"></script> -->
+
+ 
+
