@@ -11,7 +11,7 @@
 
 <main>
 
-    <!-- REPRODUCTOR -->
+    <!-- VIDEO PLAYER -->
     <section class="player-container">
 
         <div class="player">
@@ -27,7 +27,7 @@
         </div>
 
         <h2 id="videoTitle">
-            Selecciona un video
+            Select a Video
         </h2>
 
     </section>
@@ -37,7 +37,7 @@
     <section>
 
         <h2 class="section-title">
-            Videos de Jardines TV
+            Jardines TV Videos
         </h2>
 
         {% if videos %}
@@ -47,7 +47,7 @@
             {% for video in videos %}
 
             <article class="video-card"
-                     onclick="reproducirVideo('{{ video.id }}', '{{ video.title|e }}')">
+                     onclick="playVideo('{{ video.id }}', '{{ video.title|e }}')">
 
                 <img
                     src="{{ video.thumbnail }}"
@@ -66,7 +66,7 @@
         {% else %}
 
         <p class="no-videos">
-            No hay videos disponibles en este momento.
+            No videos are available at this time.
         </p>
 
         {% endif %}
@@ -77,7 +77,7 @@
 
 
 <script>
-function reproducirVideo(videoId, titulo) {
+function playVideo(videoId, title) {
 
     const player = document.getElementById("youtubePlayer");
     const videoTitle = document.getElementById("videoTitle");
@@ -87,7 +87,7 @@ function reproducirVideo(videoId, titulo) {
         videoId +
         "?autoplay=1&rel=0";
 
-    videoTitle.textContent = titulo;
+    videoTitle.textContent = title;
 
     window.scrollTo({
         top: 0,
