@@ -1,61 +1,99 @@
 {% extends "base.html" %}
- 
-<title>Jardines TV</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='videos.css')}}">
- 
 
-{% block content %} 
+{% block content %}
 
-    <header class="header">
-        <h1>Jardines TV</h1>
-        <p>Videos</p>
-    </header>
+<link rel="stylesheet" href="{{ url_for('static', filename='videos.css') }}">
 
-    <main>
+<header class="header">
+    <h1>Jardines TV</h1>
+    <p>Videos</p>
+</header>
 
-        <!-- REPRODUCTOR -->
-        <section class="player-container">
+<main>
 
-            <div class="player">
+    <!-- REPRODUCTOR -->
+    <section class="player-container">
 
-                <iframe
-                    id="youtubePlayer"
-                    src=""
-                    title="Jardines TV"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen>
-                </iframe>
+        <div class="player">
 
-            </div>
+            <iframe
+                id="youtubePlayer"
+                src=""
+                title="Jardines TV"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
 
-            <h2 id="videoTitle">
-                Select a Video
-            </h2>
+        </div>
 
-        </section>
+        <h2 id="videoTitle">
+            Selecciona un video
+        </h2>
+
+    </section>
 
 
-        <!-- VIDEOS -->
-        <section>
+    <!-- VIDEOS -->
+    <section>
 
-            <h2 class="section-title">
-                Select a Video
-            </h2>
+        <h2 class="section-title">
+            Videos de Jardines TV
+        </h2>
 
-            <div id="loading">
-                Loading Videos...
-            </div>
+        {% if videos %}
 
-            <div id="error"></div>
+        <div class="videos">
 
-            <div id="videos" class="videos"></div>
+            {% for video in videos %}
 
-        </section>
+            <article class="video-card"
+                     onclick="reproducirVideo('{{ video.id }}', '{{ video.title|e }}')">
 
-    </main>
+                <img
+                    src="{{ video.thumbnail }}"
+                    alt="{{ video.title|e }}"
+                    loading="lazy"
+                >
 
-{% endblock %}    
-    <!-- <script src="app.js"></script> -->
+                <h3>{{ video.title }}</h3>
 
- 
+            </article>
 
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <p class="no-videos">
+            No hay videos disponibles en este momento.
+        </p>
+
+        {% endif %}
+
+    </section>
+
+</main>
+
+
+<script>
+function reproducirVideo(videoId, titulo) {
+
+    const player = document.getElementById("youtubePlayer");
+    const videoTitle = document.getElementById("videoTitle");
+
+    player.src =
+        "https://www.youtube.com/embed/" +
+        videoId +
+        "?autoplay=1&rel=0";
+
+    videoTitle.textContent = titulo;
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
+
+{% endblock %}
