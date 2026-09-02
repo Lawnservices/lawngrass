@@ -1,6 +1,6 @@
 #gallery {
   max-width: 1600px;
-  margin: 24px auto;  
+  margin: 24px auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 12px;
@@ -10,7 +10,8 @@
 /* Estilo general de las imágenes */
 #gallery img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* cuadradas perfectas */
+  aspect-ratio: 1 / 1;
+  /* cuadradas perfectas */
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid #ddd;
@@ -21,13 +22,14 @@
 /* Efecto al tocar o pasar el mouse */
 #gallery img:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-.titulo{
-max-width: 1200px;
-margin: 24px auto;
+.titulo {
+  max-width: 1200px;
+  margin: 24px auto;
 }
-.titulo h1{
-padding: 6px;
+
+.titulo h1 {
+  padding: 6px;
 }

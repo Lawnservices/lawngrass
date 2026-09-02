@@ -4,9 +4,6 @@
     padding: 0;
 }
 
-
-
-
 body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
@@ -14,14 +11,11 @@ body {
     line-height: 1.5;
 }
 
-
-
-
 .header {
     background: #ffffff;
     text-align: center;
     padding: 4px 4px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
     border-bottom: 1px solid #e5e5e5;
 }
 
@@ -35,18 +29,11 @@ body {
     font-size: 17px;
 }
 
-
-
-
 main {
     width: 92%;
     max-width: 1200px;
     margin: 0 auto;
 }
-
-
-
-
 
 .player-container {
     margin-bottom: 45px;
@@ -89,16 +76,10 @@ main {
     color: #222;
 }
 
-
-
-
 .section-title {
     margin-bottom: 20px;
     font-size: 25px;
 }
-
-
-
 
 .videos {
     display: grid;
@@ -106,9 +87,6 @@ main {
     gap: 25px;
     padding-bottom: 40px;
 }
-
-
-
 
 .video-card {
     background: #ffffff;
@@ -126,17 +104,12 @@ main {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-
-
-
 .video-card img {
     display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
 }
-
-
 
 .video-card h3 {
     padding: 15px;
@@ -145,9 +118,6 @@ main {
     color: #222;
 }
 
-
-
-
 #loading {
     padding: 20px 0;
     text-align: center;
@@ -155,17 +125,11 @@ main {
     font-size: 16px;
 }
 
-
-
-
 #error {
     color: #c00;
     margin-bottom: 20px;
     text-align: center;
 }
-
-
-
 
 .no-videos {
     background: #ffffff;
@@ -174,9 +138,6 @@ main {
     text-align: center;
     color: #666;
 }
-
-
-
 
 @media (max-width: 900px) {
 
@@ -197,9 +158,6 @@ main {
         font-size: 20px;
     }
 }
-
-
-
 
 @media (max-width: 600px) {
 
@@ -252,9 +210,6 @@ main {
         font-size: 16px;
     }
 }
-
-
-
 
 @media (max-width: 400px) {
 

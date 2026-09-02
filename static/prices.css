@@ -7,21 +7,25 @@ table {
     font-size: 1.2rem;
     text-align: start;
     padding: 6px;
-    
+
 }
-.titulos{
+
+.titulos {
     background-color: #333;
 }
+
 table,
 th,
 td {
     border: 1px solid #154;
     padding: 12px 12px;
-     
+
 }
-td{
+
+td {
     text-align: justify;
 }
+
 table {
     width: 80%;
     margin-left: 10%;

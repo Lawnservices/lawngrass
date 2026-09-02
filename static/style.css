@@ -1,55 +1,58 @@
-body{
-margin: 0;
+body {
+  margin: 0;
 }
-.content{
-max-width: 1200px;
-margin: 24px auto;
- 
+
+.content {
+  max-width: 1200px;
+  margin: 24px auto;
+
 }
+
 header {
-    margin: 0;
-    overflow: hidden;
-    background: #0b3d2e;
-    padding: 15px 0;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin: 0;
+  overflow: hidden;
+  background: #0b3d2e;
+  padding: 15px 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* quitar estilo de lista */
 header ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
 /* links */
 header ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-    padding: 8px 15px;
-    border-radius: 6px;
-    transition: 0.3s;
+  text-decoration: none;
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
 }
 
 /* hover bonito */
 header ul li a:hover {
-    background: #1e7a57;
-    color: #fff;
+  background: #1e7a57;
+  color: #fff;
 }
-h1{
-text-align: center;
-color:#061125;
- 
+
+h1 {
+  text-align: center;
+  color: #061125;
+
 }
 
 
 #gallery {
   max-width: 1600px;
-  margin: 24px auto;  
+  margin: 24px auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: 12px;
@@ -59,7 +62,8 @@ color:#061125;
 /* Estilo general de las imágenes */
 #gallery img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* cuadradas perfectas */
+  aspect-ratio: 1 / 1;
+  /* cuadradas perfectas */
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid #ddd;
@@ -70,35 +74,36 @@ color:#061125;
 /* Efecto al tocar o pasar el mouse */
 #gallery img:hover {
   transform: scale(1.03);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
 /* call */
-p{
-color: #1e7a57;
-font-size: 22px;
-text-align: center;
+p {
+  color: #1e7a57;
+  font-size: 22px;
+  text-align: center;
 }
 
-.contenido{
-flex: 1;  
-background-color:white;
-max-width: 1400px;
-padding: 16px;
-box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.2); 
-margin-top: 60px;
-margin: 6px;
-}
-.contenido p{
-color: rgb(68, 30, 30);
+.contenido {
+  flex: 1;
+  background-color: white;
+  max-width: 1400px;
+  padding: 16px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  margin-top: 60px;
+  margin: 6px;
 }
 
- footer {
-    margin-top: auto;
-    text-align: center;
-    padding: 20px;
-    background: #0b3d2e;
-    color: white;
-     
-    
+.contenido p {
+  color: rgb(68, 30, 30);
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 20px;
+  background: #0b3d2e;
+  color: white;
+
+
 }

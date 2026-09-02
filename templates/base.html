@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="r_YoJCCThd_rTAUQph9hThlSg0sTxlLSRE9bMADaqX0" />
-     <meta name="description" content="lawn mowing, lahnam md, miguel laguna, leaf removal, the best prices in thr area">
-     <meta name="author" content="Miguel Laguna">
+    <meta name="description" content="lawn mowing, lahnam md, miguel laguna, leaf removal, the best prices in thr area">
+    <meta name="author" content="Miguel Laguna">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
     <link rel="shortcut icon" href="https://img.icons8.com/color/48/field.png" type="image/x-icon">
     {% block head %}{% endblock%}
     <title>{% block title%}Miguel Lawn Services {% endblock%}</title>
 </head>
+
 <body>
-  <header>
-    <ul>
-        <li><a href="{{ url_for('index') }}">Home</a></li>
-        <li><a href="{{ url_for('prices') }}">Prices</a></li>
-        <li><a href="{{ url_for('photos') }}">Photos</a></li>
-        <li><a href="{{ url_for('videos') }}">videos</a></li>
-        
-    </ul>
-  </header>
-  <h1>Call Now 240-883-8479</h1>
+    <header>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('prices') }}">Prices</a></li>
+            <li><a href="{{ url_for('photos') }}">Photos</a></li>
+            <li><a href="{{ url_for('videos') }}">videos</a></li>
+
+        </ul>
+    </header>
+    <h1>Call Now 240-883-8479</h1>
     <div class="content">
         {% block content%}{% endblock %}
     </div>
-    
+
 
 
     {% block script %}{% endblock %}
@@ -33,4 +35,5 @@
         <p>© Miguel Laguna Lawn Services. All Rights Reserved</p>
     </footer>
 </body>
+
 </html>

@@ -6,7 +6,7 @@
 
 <header class="header">
     <h1>Jardines TV</h1>
-    
+
 </header>
 
 <main>
@@ -16,16 +16,9 @@
 
         <div class="player">
 
-             <img
-            id="playerPlaceholder"
-            src="{{ url_for('static', filename='images/review88.jpg') }}"
-            alt="Jardines TV"
-            class="player-placeholder"
-        >
-            <iframe
-                id="youtubePlayer"
-                src=""
-                title="Jardines TV"
+            <img id="playerPlaceholder" src="{{ url_for('static', filename='images/review88.jpg') }}" alt="Jardines TV"
+                class="player-placeholder">
+            <iframe id="youtubePlayer" src="" title="Jardines TV"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
@@ -52,14 +45,9 @@
 
             {% for video in videos %}
 
-            <article class="video-card"
-                     onclick="playVideo('{{ video.id }}', '{{ video.title|e }}')">
+            <article class="video-card" onclick="playVideo('{{ video.id }}', '{{ video.title|e }}')">
 
-                <img
-                    src="{{ video.thumbnail }}"
-                    alt="{{ video.title|e }}"
-                    loading="lazy"
-                >
+                <img src="{{ video.thumbnail }}" alt="{{ video.title|e }}" loading="lazy">
 
                 <h3>{{ video.title }}</h3>
 
@@ -83,32 +71,32 @@
 
 
 <script>
-function playVideo(videoId, title) {
+    function playVideo(videoId, title) {
 
-    const player = document.getElementById("youtubePlayer");
-    const placeholder = document.getElementById("playerPlaceholder");
-    const videoTitle = document.getElementById("videoTitle");
+        const player = document.getElementById("youtubePlayer");
+        const placeholder = document.getElementById("playerPlaceholder");
+        const videoTitle = document.getElementById("videoTitle");
 
-    // Ocultar imagen inicial
-    placeholder.style.display = "none";
+        // Ocultar imagen inicial
+        placeholder.style.display = "none";
 
-    // Mostrar video
-    player.style.display = "block";
+        // Mostrar video
+        player.style.display = "block";
 
-    player.src =
-        "https://www.youtube.com/embed/" +
-        videoId +
-        "?autoplay=1&rel=0";
+        player.src =
+            "https://www.youtube.com/embed/" +
+            videoId +
+            "?autoplay=1&rel=0";
 
-    // Cambiar título
-    videoTitle.textContent = title;
+        // Cambiar título
+        videoTitle.textContent = title;
 
-    // Subir al reproductor
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-}
+        // Subir al reproductor
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
 </script>
 
 {% endblock %}
