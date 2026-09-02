@@ -5,7 +5,7 @@
 }
 
 
- 
+
 
 body {
     font-family: Arial, sans-serif;
@@ -15,7 +15,7 @@ body {
 }
 
 
- 
+
 
 .header {
     background: #ffffff;
@@ -36,7 +36,7 @@ body {
 }
 
 
- 
+
 
 main {
     width: 92%;
@@ -45,7 +45,7 @@ main {
 }
 
 
- 
+
 
 .player-container {
     margin-bottom: 45px;
@@ -75,7 +75,7 @@ main {
 }
 
 
- 
+
 
 .section-title {
     margin-bottom: 20px;
@@ -83,7 +83,7 @@ main {
 }
 
 
- 
+
 
 .videos {
     display: grid;
@@ -93,7 +93,7 @@ main {
 }
 
 
- 
+
 
 .video-card {
     background: #ffffff;
@@ -112,7 +112,7 @@ main {
 }
 
 
- 
+
 
 .video-card img {
     display: block;
@@ -121,7 +121,7 @@ main {
     object-fit: cover;
 }
 
- 
+
 
 .video-card h3 {
     padding: 15px;
@@ -131,7 +131,7 @@ main {
 }
 
 
- 
+
 
 #loading {
     padding: 20px 0;
@@ -141,7 +141,7 @@ main {
 }
 
 
- 
+
 
 #error {
     color: #c00;
@@ -150,7 +150,7 @@ main {
 }
 
 
- 
+
 
 .no-videos {
     background: #ffffff;
@@ -161,7 +161,7 @@ main {
 }
 
 
- 
+
 
 @media (max-width: 900px) {
 
@@ -184,7 +184,7 @@ main {
 }
 
 
- 
+
 
 @media (max-width: 600px) {
 
@@ -239,7 +239,7 @@ main {
 }
 
 
- 
+
 
 @media (max-width: 400px) {
 
