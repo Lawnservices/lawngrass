@@ -2,27 +2,28 @@ import os
 import requests
 from flask import Flask, redirect, render_template
 
-
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template("index.html")
 
 
-@app.route('/prices')
+@app.route("/prices")
 def prices():
-    return render_template('prices.html')
+    return render_template("prices.html")
 
 
-@app.route('/photos')
+@app.route("/photos")
 def photos():
-    return render_template('photos.html')
+    return render_template("photos.html")
+
 
 # para videos
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY")
 
- 
+
 # ID de tu canal de YouTube
 YOUTUBE_CHANNEL_ID = "UC8Q51GWY9f5YsIQyLwNMfbw"
 
@@ -35,34 +36,25 @@ def obtener_videos_youtube(max_results=20):
     channel_params = {
         "part": "contentDetails",
         "key": YOUTUBE_API_KEY,
-        "id": YOUTUBE_CHANNEL_ID
-        
+        "id": YOUTUBE_CHANNEL_ID,
     }
 
-    channel_response = requests.get(
-        channel_url,
-        params=channel_params,
-        timeout=10
-    )
+    channel_response = requests.get(channel_url, params=channel_params, timeout=10)
 
     if channel_response.status_code != 200:
-         print("ERROR DE YOUTUBE")
-         print("CODIGO:", channel_response.status_code)
-         print("RESPUESTA:", channel_response.text)
-         return []
-        
+        print("ERROR DE YOUTUBE")
+        print("CODIGO:", channel_response.status_code)
+        print("RESPUESTA:", channel_response.text)
+        return []
 
     channel_data = channel_response.json()
 
     if not channel_data.get("items"):
         return []
 
-    uploads_playlist_id = (
-        channel_data["items"][0]
-        ["contentDetails"]
-        ["relatedPlaylists"]
-        ["uploads"]
-    )
+    uploads_playlist_id = channel_data["items"][0]["contentDetails"][
+        "relatedPlaylists"
+    ]["uploads"]
 
     # 2. Obtener los videos
     playlist_url = "https://www.googleapis.com/youtube/v3/playlistItems"
@@ -71,14 +63,10 @@ def obtener_videos_youtube(max_results=20):
         "part": "snippet,contentDetails",
         "playlistId": uploads_playlist_id,
         "maxResults": max_results,
-        "key": YOUTUBE_API_KEY
+        "key": YOUTUBE_API_KEY,
     }
 
-    playlist_response = requests.get(
-        playlist_url,
-        params=playlist_params,
-        timeout=10
-    )
+    playlist_response = requests.get(playlist_url, params=playlist_params, timeout=10)
 
     playlist_response.raise_for_status()
 
@@ -91,30 +79,34 @@ def obtener_videos_youtube(max_results=20):
         video_id = item["contentDetails"]["videoId"]
         snippet = item["snippet"]
 
-        videos.append({
-            "id": video_id,
-            "title": snippet["title"],
-            "description": snippet["description"],
-            "thumbnail": snippet["thumbnails"]["high"]["url"],
-            "published_at": snippet["publishedAt"]
-        })
+        videos.append(
+            {
+                "id": video_id,
+                "title": snippet["title"],
+                "description": snippet["description"],
+                "thumbnail": snippet["thumbnails"]["high"]["url"],
+                "published_at": snippet["publishedAt"],
+            }
+        )
 
     return videos
+
 
 @app.route("/videos")
 def videos():
 
     youtube_videos = obtener_videos_youtube(20)
 
-    return render_template(
-        "videos.html",
-        videos=youtube_videos
-    )
+    return render_template("videos.html", videos=youtube_videos)
+
+
 # pagina de error
- 
+
+
 @app.errorhandler(404)
 def pagina_no_encontrada(error):
     return redirect("/photos")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     app.run(debug=True)
