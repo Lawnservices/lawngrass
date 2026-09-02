@@ -47,6 +47,7 @@ main {
 
 
 
+
 .player-container {
     margin-bottom: 45px;
 }
@@ -58,13 +59,27 @@ main {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+    /* Centrar la imagen */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.player-placeholder {
+    width: auto;
+    height: auto;
+    max-width: 60%;
+    max-height: 80%;
+    object-fit: contain;
+    display: block;
 }
 
 .player iframe {
-    display: block;
     width: 100%;
     height: 100%;
     border: none;
+    display: none;
 }
 
 #videoTitle {
