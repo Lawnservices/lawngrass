@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Face.con: comparte tus ideas y conoce a la comunidad.">
+  <title>{% block title %}Face.com{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url_for('index') }}">Face<span>.com</span></a>
+  <nav>
+    <a href="{{ url_for('index') }}">Inicio</a>
+    {% if logged_in_user %}
+      <a href="{{ url_for('profile', user_id=logged_in_user.id) }}">Mi perfil</a>
+      <a href="{{ url_for('settings') }}">Editar perfil</a>
+      <form class="inline" method="post" action="{{ url_for('logout') }}">
+        <button class="nav-button" type="submit">Cerrar sesión</button>
+      </form>
+    {% else %}
+      <a href="{{ url_for('login') }}">Entrar</a>
+      <a class="nav-cta" href="{{ url_for('register') }}">Crear cuenta</a>
+    {% endif %}
+  </nav>
+</header>
+<main class="container">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="messages">
+      {% for category, message in messages %}
+        <div class="flash {{ category }}">{{ message }}</div>
+      {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="footer">Face.com · Comparte tus ideas con respeto.</footer>
+</body>
+</html>

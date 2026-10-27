@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Editar perfil · Face.con{% endblock %}
+{% block content %}
+<div class="auth-wrap"><section class="auth-card card">
+  <p class="eyebrow">TU ESPACIO</p><h1>Editar perfil</h1><p class="muted">Personaliza cómo te ve la comunidad.</p>
+  <form method="post" enctype="multipart/form-data" class="form-stack">
+    <label for="profile_image">Foto de perfil</label><input id="profile_image" name="profile_image" type="file" accept="image/png,image/jpeg,image/gif,image/webp">
+    <small class="muted">PNG, JPG, GIF o WEBP. Máximo 5 MB.</small>
+    <label for="bio">Descripción</label><textarea id="bio" name="bio" maxlength="250" placeholder="Cuéntale algo a la comunidad...">{{ profile.bio }}</textarea>
+    <button class="button full" type="submit">Guardar cambios</button>
+  </form>
+</section></div>
+{% endblock %}
