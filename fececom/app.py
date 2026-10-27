@@ -25,3 +25,6 @@ def settings():
 @app.route("/facecom/error")
 def error():
     return render_template("error.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)
